@@ -1,0 +1,47 @@
+{
+  "name": "spodth-backend",
+  "version": "1.0.0",
+  "description": "SPODTH Music Streaming Platform - Backend",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "migrate": "node src/config/migrate.js",
+    "seed": "node src/config/seed.js",
+    "test": "jest",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "music",
+    "streaming",
+    "spotify",
+    "react",
+    "nodejs"
+  ],
+  "author": "SPODTH Team",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "jsonwebtoken": "^9.1.1",
+    "pg": "^8.11.3",
+    "spotify-web-api-node": "^5.0.2",
+    "uuid": "^9.0.1",
+    "axios": "^1.6.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

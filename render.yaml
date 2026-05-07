@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: spodth-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: spodth-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SPOTIFY_CLIENT_ID
+        sync: false
+      - key: SPOTIFY_CLIENT_SECRET
+        sync: false
+      - key: SPOTIFY_REDIRECT_URI
+        value: https://spodth-api.onrender.com/api/auth/spotify/callback
+      - key: FRONTEND_URL
+        value: https://spodth.vercel.app
+
+databases:
+  - name: spodth-db
+    databaseName: spodth_db
+    user: spodth_user
+    ipWhitelist:
+      - 0.0.0.0/0
